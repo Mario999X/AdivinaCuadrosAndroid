@@ -104,7 +104,6 @@ public class ActivityJuego extends AppCompatActivity {
                 String adivinacion = editTextNombreJuego.getText().toString();
                 String cuadroElegido = cuadroList.get(random).getNombre();
                 if (adivinacion.equalsIgnoreCase(cuadroElegido)){
-                    System.out.println(cuadroElegido);
                     Toast.makeText(ActivityJuego.this, "¡Acertaste!", Toast.LENGTH_SHORT).show();
                     puntos = puntos + 1;
                 } else {
