@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/testViewAcercaDe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="156dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="163dp"
+        android:text="Acerca De"
+        android:textColor="#000000"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewAcercaDe_uno"
+        android:layout_width="382dp"
+        android:layout_height="99dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="68dp"
+        android:layout_marginEnd="21dp"
+        android:text="El juego se basa en adivinar el nombre de los cuadros, seleccionados al azar de una lista (visible desde la actividad principal con su respectivo botón)."
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/testViewAcercaDe" />
+
+    <TextView
+        android:id="@+id/textViewAcercaDe_dos"
+        android:layout_width="382dp"
+        android:layout_height="99dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="180dp"
+        android:layout_marginEnd="21dp"
+        android:text="El número de vidas inicial será de 3, y esta se reducirá con cada fallo. \nLa gracia está en intentar sacar la mayor puntuación, ¡buena suerte!"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/testViewAcercaDe" />
+
+    <TextView
+        android:id="@+id/textViewAcercaDe_tres"
+        android:layout_width="382dp"
+        android:layout_height="99dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="292dp"
+        android:layout_marginEnd="21dp"
+        android:text="PD: Para mayor comodidad, no se tendrán en cuenta tíldes o las mayúsculas; los espacios siguen siendo necesarios."
+        android:textSize="20sp"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/testViewAcercaDe" />
+</androidx.constraintlayout.widget.ConstraintLayout>
