@@ -110,7 +110,7 @@ public class ActivityJuego extends AppCompatActivity {
                     Toast.makeText(ActivityJuego.this, "¡Fallaste!", Toast.LENGTH_SHORT).show();
                     vidas = vidas - 1;
                     if (vidas == 0){
-                        Snackbar.make(findViewById(R.id.layoutJuego), "¡Fin del juego! | Puntuación: "+ puntos, Snackbar.LENGTH_LONG).show();
+                        Snackbar.make(findViewById(R.id.layoutJuego), "¡Fin del juego! | Puntuación: "+ puntos, Snackbar.LENGTH_LONG).setDuration(10000).show();
                         vidas = 3;
                         puntos = 0;
                         textViewVidas.setText("Vidas: ");
