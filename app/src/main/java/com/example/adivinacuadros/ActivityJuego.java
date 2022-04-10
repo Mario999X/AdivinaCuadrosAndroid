@@ -41,9 +41,15 @@ public class ActivityJuego extends AppCompatActivity {
         editTextNombreJuego = findViewById(R.id.editTextNombreJuego);
         btnConfirmar = findViewById(R.id.btnConfirmar);
 
+        informacionPartida();
         rellenarLista();
         cuadroRandom();
         empezarJuego();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
     }
 
 
@@ -91,36 +97,41 @@ public class ActivityJuego extends AppCompatActivity {
         //cuadroList.add();
     }
 
-    private int cuadroRandom(){
+    private void cuadroRandom() {
         random = (int) (Math.random() * cuadroList.size());
         imageViewJuego.setImageResource(cuadroList.get(random).getImagen());
-        return random;
     }
 
+    private void informacionPartida() {
+        textViewVidas.setText("Vidas: " + vidas);
+        textViewPuntos.setText("Puntos: " + puntos);
+    }
+
+
     private void empezarJuego() {
-        btnConfirmar.setOnClickListener(new View.OnClickListener(){
+        btnConfirmar.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v){
+            public void onClick(View v) {
                 String adivinacion = editTextNombreJuego.getText().toString();
                 String cuadroElegido = cuadroList.get(random).getNombre();
-                if (adivinacion.equalsIgnoreCase(cuadroElegido)){
+                if (adivinacion.equalsIgnoreCase(cuadroElegido)) {
                     Toast.makeText(ActivityJuego.this, "¡Acertaste!", Toast.LENGTH_SHORT).show();
                     puntos = puntos + 1;
+
                 } else {
                     Toast.makeText(ActivityJuego.this, "¡Fallaste!", Toast.LENGTH_SHORT).show();
                     vidas = vidas - 1;
-                    if (vidas == 0){
-                        Snackbar.make(findViewById(R.id.layoutJuego), "¡Fin del juego! | Puntuación: "+ puntos, Snackbar.LENGTH_LONG).setDuration(10000).show();
+
+                    if (vidas == 0) {
+                        Snackbar.make(findViewById(R.id.layoutJuego), "¡Fin del juego! | Puntuación: " + puntos, Snackbar.LENGTH_LONG).setDuration(10000).show();
                         vidas = 3;
                         puntos = 0;
-                        textViewVidas.setText("Vidas: ");
-                        textViewPuntos.setText("Puntos: ");
+                        informacionPartida();
                     }
                 }
                 cuadroRandom();
                 editTextNombreJuego.setText("");
-                textViewVidas.setText("Vidas: " + vidas);
-                textViewPuntos.setText("Puntos: " + puntos);
+                informacionPartida();
             }
         });
     }
